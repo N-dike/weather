@@ -16,15 +16,15 @@ showBottomDiv: false
     this.Submission = this.Submission.bind(this)
   }
 
-   chHandler=(e)=>{
-     this.setState({cityName: e.target.value })
-       }
+  
   hideComponent(){
     this.setState({showBottomDiv: !this.state.showBottomDiv})
   }
        Submission = e =>{
+         
          e.preventDefault()
         this.setState({cityName: e.target[0].value})
+
             }
    
   
@@ -50,28 +50,26 @@ showBottomDiv: false
     return (     
 <div className='app-container'>
       <div className="main-container">
-         {/* {isLoading && <div className='d-flex align-items-center'>
+          {isLoading && <div className='d-flex align-items-center'>
 <strong>Loading the Weather</strong>
-  <div className="spinner-border text-info ml-2" role="status">
+  <div className="spinner-border text-info ml-3" role="status">
 </div>
-</div>}  */}
-         {/* {!isLoading &&  */}
-     <div className='top'>
-       <TopDiv
-     eventEmitter={this.props.eventEmitter}
-     hideComponent={this.hideComponent}
-     iconURL={iconURL}
-     isDay={isDay}
-     location={cityName} 
-     temp_c={temp_c}
-     text={text}
-     /></div>
-     <div className='bottom'>
-       {this.state.showBottomDiv ? <BottomDiv
-       chHandler={this.chHandler}
-       Submission={this.Submission}
-       />: null}
-       </div>
+</div>} 
+          {!isLoading &&  
+     <><div className='top'>
+              <TopDiv
+                hideComponent={this.hideComponent}
+                iconURL={iconURL}
+                isDay={isDay}
+                location={cityName}
+                temp_c={temp_c}
+                text={text} /></div><div className='bottom'>
+                {this.state.showBottomDiv ? <BottomDiv
+                  chHandler={this.chHandler}
+                  Submission={this.Submission}
+                  cityName={this.cityName} /> : null}
+              </div></>
+  }
       </div>
       </div>   
       

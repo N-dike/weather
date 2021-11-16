@@ -4,15 +4,20 @@ import './style.scss'
 export default class BottomDiv extends Component {
     constructor(props) {
         super(props)
-        this.state = {}
+        this.state = {
+            locationName:''
+        }
     }
     
     
-   
+    chHandler=(e)=>{
+        this.setState({locationName: e.target.value })
+        
+          }
 
 render() {
-
-    const {cityName, chHandler, Submission} = this.props    
+    const {chHandler, } = this.state
+    const {cityName, Submission} = this.props    
         return ( 
         <div className='B-container'>
             <div className='bottom'>
@@ -25,9 +30,9 @@ render() {
                         <input className='location-name'
                         onChange={chHandler}
                         type='text' placeholder='City Name'
-                        value={cityName}/>
+                        />
                            <button className='btn btn-sm btn-primary mb-2'
-            type='submit'> Select
+            type='submit'> Select;
             </button>
             </form>
                     </div>
