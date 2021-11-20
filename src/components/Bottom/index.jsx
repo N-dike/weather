@@ -32,7 +32,7 @@ render() {
                         type='text' placeholder='City Name'
                         />
                            <button className='btn btn-sm btn-primary mb-2'
-            type='submit'> Select;
+            type='submit'> Select
             </button>
             </form>
                     </div>
