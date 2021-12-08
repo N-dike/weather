@@ -17,7 +17,7 @@ export default class BottomDiv extends Component {
 
 render() {
     const {chHandler, } = this.state
-    const {cityName, Submission} = this.props    
+    const { Submission} = this.props    
         return ( 
         <div className='B-container'>
             <div className='bottom'>
