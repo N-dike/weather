@@ -64,10 +64,10 @@ showBottomDiv: false
                 location={cityName}
                 temp_c={temp_c}
                 text={text} /></div><div className='bottom'>
+
                 {this.state.showBottomDiv ? <BottomDiv
                   chHandler={this.chHandler}
-                  Submission={this.Submission}
-                  cityName={this.cityName} /> : null}
+                  Submission={this.Submission}/> : null}
               </div></>
   }
       </div>
