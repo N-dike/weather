@@ -31,18 +31,18 @@ showBottomDiv: false
  
   render() {
     const {cityName, iconURL, isDay, isLoading, temp_c, text} = this.state
-    const WEATHER_KEY = 'c2fc55888aa152f203c01199eab165ed'
-    const URL = `http://api.weatherstack.com/current?access_key=${WEATHER_KEY}&query=${cityName}`
+    const WEATHER_KEY = 'ea05abba7d3f471188014945211609'
+    const URL = `https://api.weatherapi.com/v1/current.json?key=${WEATHER_KEY}&q=${cityName}&aqi=no`
     axios.get(URL).then(res =>{
         return res.data
     }).then((data)=>{
         this.setState({
           forecastdays:data.forecast,
           isLoading: false,
-          iconURL: data.current.weather_icons, 
+          iconURL: data.current.condition.icon, 
           isDay: data.current.is_day, 
-          temp_c: data.current.temperature, 
-          text:data.current.weather_descriptions})
+          temp_c: data.current.temp_c, 
+          text:data.current.condition.text})
     }).catch(err=> {
       (err)? console.error('Cannot fetch from API', err): console.log('fetch data');
     })
